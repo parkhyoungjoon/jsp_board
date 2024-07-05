@@ -8,9 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-
-@WebServlet("/hello")
-public class HelloServlet extends HttpServlet {
+@WebServlet("/gugudan")
+public class gugudan extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 인코딩
@@ -25,6 +24,17 @@ public class HelloServlet extends HttpServlet {
             //resp.getWriter().append("<div>%d * %d = %d</div>".formatted(dan, i, dan * i));
             rq.writer("<div>%d * %d = %d</div>".formatted(dan, i, dan * i));
         }
+        rq.writer(""" 
+<div class="a"></div>
+
+<style>
+    .a{
+        width: 100px;
+        height: 100px;
+        background-color:red;
+    }
+</style>
+                    """);
         //resp.getWriter().append(rs);
     }
 }
